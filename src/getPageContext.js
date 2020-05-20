@@ -2,71 +2,87 @@
 
 import { SheetsRegistry } from 'jss';
 import { createMuiTheme, createGenerateClassName } from '@material-ui/core/styles';
-import green from '@material-ui/core/colors/green';
-import brown from '@material-ui/core/colors/brown';
+import lightBlue from '@material-ui/core/colors/lightBlue';
+import blueGrey from '@material-ui/core/colors/blueGrey';
+import grey from '@material-ui/core/colors/grey';
+import red from '@material-ui/core/colors/red';
 
 // A theme with custom primary and secondary color.
 // It's optional.
 const theme = createMuiTheme({
+//   {
+//     "palette": {
+//         "primary1Color": "#039be5",
+//         "accent1Color": "#b71c1c",
+//         "alternateTextColor": "#37474f",
+//         "secondaryTextColor": "#757575",
+//         "canvasColor": "#212121",
+//         "borderColor": "#616161",
+//         "primary3Color": "rgba(216, 67, 21, 0.5)",
+//         "disabledColor": "rgba(97, 97, 97, 0.98)",
+//         "accent2Color": "#bf360c",
+//         "textColor": "rgba(236, 239, 241, 0.5)",
+//         "accent3Color": "#ff9e80"
+//     },
+//     "appBar": {
+//         "color": "rgba(38, 50, 56, 0.25)",
+//         "textColor": "rgba(176, 190, 197, 0.75)"
+//     },
+//     "flatButton": {
+//         "textColor": "rgba(236, 239, 241, 0.5)"
+//     },
+//     "raisedButton": {
+//         "secondaryTextColor": "rgba(207, 216, 220, 0.75)",
+//         "primaryTextColor": "#b3e5fc"
+//     },
+//     "tabs": {
+//         "backgroundColor": "#37474f",
+//         "textColor": "rgba(144, 164, 174, 0.7)",
+//         "selectedTextColor": "#cfd8dc"
+//     },
+//     "timePicker": {
+//         "textColor": "#607d8b"
+//     }
+// }
   palette: {
+    type: 'dark',
+    common: {
+      white: grey[500],
+    },
     primary: {
-      light: green[300],
-      main: green[500],
-      dark: green[700],
+      light: lightBlue[400],
+      main: lightBlue[600],
+      dark: lightBlue[900],
+      contrastText: grey[900],
     },
     secondary: {
-      light: brown[300],
-      main: brown[500],
-      dark: brown[700],
+      light: red[600],
+      main: red[800],
+      dark: red[900],
     },
-    fire: {
-      light: '#e46646',
-      main: '#c94524',
-      dark: '#9e4832',
+    grey: blueGrey,
+    background: {
+      paper: grey[800],
     },
-    lightning: {
-      light: '#e3cd73',
-      main: '#cbaf3f',
-      dark: '#ad9b52',
-    },
-    life: {
-      light: '#9ed24d',
-      main: '#78b717',
-      dark: '#709b2e',
-    },
-    water: {
-      light: '#51c7d8',
-      main: '#24b4c9',
-      dark: '#3c9dab',
-    },
-    frost: {
-      light: '#7985d4',
-      main: '#4a5ac5',
-      dark: '#4e5790',
-    },
-    hex: {
-      light: '#cc72d7',
-      main: '#bd45cb',
-      dark: '#974e9f',
-    },
-    rock: {
-      light: '#a18e7a',
-      main: '#8d7760',
-      dark: '#6c645b',
-    },
-    grass: {
-      light: '#95ba59',
-      main: '#759f33',
-      dark: '#678041',
-    },
-    death: {
-      light: '#5d586b',
-      main: '#48415a',
-      dark: '#332b45',
-    },
+    text: {
+      primary: "rgba(255, 255, 255, 0.75)"
+    }
   },
   typography: {
-    fontSize: 10
+    fontFamily: 'Eczar, Helvetica, Arial, sans-serif',
+    fontSize: 15,
+  },
+  overrides: {
+    MuiButton: {
+      root: {
+        textTransform: 'none'
+      }
+    },
+    MuiAppBar: {
+      colorPrimary: {
+        backgroundColor: 'rgba(0,0,0,0.2)'
+      }
+    }
   }
 });
 
